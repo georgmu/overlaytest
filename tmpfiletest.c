@@ -55,9 +55,12 @@ int main(void) {
 
 	if (fread(&file_value, sizeof(file_value), 1, f) == 1) {
 		printf("unexcpected read success: read %llu, expected eof", file_value);
+		return EXIT_FAILURE;
 	}
 
 	fclose(f);
+
+	printf("success\n");
 
 	return EXIT_SUCCESS;
 }
